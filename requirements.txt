@@ -1,0 +1,9 @@
+certifi==2021.5.30
+chardet==3.0.3
+idna==2.7
+requests==2.19.1
+urllib3==1.21.1
+pytz==2021.1
+requests-toolbelt==0.8.0
+twilio==6.16.1
+boto3==1.7.80
