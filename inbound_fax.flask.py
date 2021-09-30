@@ -21,10 +21,17 @@ def read_table_item(table_name, pk_name, pk_value):
 
     return response
     
+@app.route('/inboundfax',methods = ['POST', 'GET'])
+def inboundfax():
+    if request.method == 'POST':
+      user = request.form['nm']
+      return redirect(url_for('success',name = user))
+    else:
+      user = request.args.get('nm')
+      return redirect(url_for('success',name = user))
 
-def lambda_handler():
-    @app.route('/inboundfax')
-      
+
+def lambda_handler():    
     print('Function Executing')
 #    print("Event Passed to Handler: " + json.dumps(event))
 #    emailbody = json.loads(event['body'])
