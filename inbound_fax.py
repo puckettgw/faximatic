@@ -22,10 +22,15 @@ def read_table_item(table_name, pk_name, pk_value):
     return response
     
 
-def lambda_handler():
+def main():
     @app.route('/inboundfax')
-      
-    print('Function Executing')
+    def process_fax(body):
+        print("Function Executing")
+        if request.method == 'GET':
+            print ("GET request")
+        if request.method == 'POST':
+            print ("POST request")
+
 #    print("Event Passed to Handler: " + json.dumps(event))
 #    emailbody = json.loads(event['body'])
 #    print(emailbody.keys())
