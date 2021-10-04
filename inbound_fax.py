@@ -23,8 +23,8 @@ def read_table_item(table_name, pk_name, pk_value):
     
 
 def main():
-    @app.route('/inboundfax')
-    def process_fax(body):
+    @app.route('/inboundfax', methods=['GET','POST'])
+    def process_fax(request):
         print("Function Executing")
         if request.method == 'GET':
             print ("GET request")
