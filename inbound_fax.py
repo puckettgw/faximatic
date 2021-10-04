@@ -29,11 +29,11 @@ def main():
         print("Function Executing")
         if request.method == 'GET':
             print ("GET request")
-            data = {"status": "success", "some key", "some value"}
+            data = {"status": "success", "some key": "some value"}
             return data, 200
         if request.method == 'POST':
             print ("POST request")
-            data = {"status": "success", "some key", "some value"}
+            data = {"status": "success", "some key": "some value"}
             return data, 200
 
 #    print("Event Passed to Handler: " + json.dumps(event))
