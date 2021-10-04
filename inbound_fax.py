@@ -22,7 +22,7 @@ def read_table_item(table_name, pk_name, pk_value):
     return response
     
 
-def main():
+def main(request):
     @app.route('/', methods=['GET','POST'])
     def process_fax(request):
         app.logger.info(request)
@@ -35,7 +35,7 @@ def main():
             print ("POST request")
             data = {"status": "success", "some key": "some value"}
             return data, 200
-
+    process_fax(request)
 #    print("Event Passed to Handler: " + json.dumps(event))
 #    emailbody = json.loads(event['body'])
 #    print(emailbody.keys())
