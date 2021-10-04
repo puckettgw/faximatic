@@ -10,6 +10,7 @@ from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
 from flask import Flask, redirect, url_for, current_app
 from flask import request as r
+from flask import Response as R
 app = Flask(__name__)
 def read_table_item(table_name, pk_name, pk_value):
     """
@@ -25,10 +26,10 @@ def main():
     app.logger.info("Function Executing")
     if r.method == 'GET':
         app.logger.info("GET request")
-        return Flask.Response(status=200)
+        return R(status=200)
     if r.method == 'POST':
         app.logger.info("POST request")
-        return Flask.Response(status=200)
+        return R(status=200)
     
 #    print("Event Passed to Handler: " + json.dumps(event))
 #    emailbody = json.loads(event['body'])
