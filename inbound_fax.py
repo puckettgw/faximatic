@@ -9,7 +9,6 @@ import boto3
 from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
 from flask import Flask, redirect, url_for, current_app, request
-body = request.data
 app = Flask(__name__)
 def read_table_item(table_name, pk_name, pk_value):
     """
@@ -35,7 +34,7 @@ def main():
 #    emailbody = json.loads(event['body'])
 #    print(emailbody.keys())
 #
-    app.logger.info(body)
+    app.logger.info(request)
 #    print(event['body'])
     
     fax_url = "http://nothing.net/?"+event['body']
