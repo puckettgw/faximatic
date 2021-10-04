@@ -8,7 +8,8 @@ import requests
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
-from flask import Flask, redirect, url_for, current_app, request
+from flask import Flask, redirect, url_for, current_app
+from flask import request
 app = Flask(__name__)
 def read_table_item(table_name, pk_name, pk_value):
     """
