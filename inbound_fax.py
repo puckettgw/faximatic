@@ -18,20 +18,17 @@ def read_table_item(table_name, pk_name, pk_value):
     dynamodb_resource = boto3.resource('dynamodb', region_name='us-east-1')
     table = dynamodb_resource.Table(table_name)
     response = table.get_item(Key={pk_name: pk_value})
-
     return response
 
 def main():
     app.logger.info(r)
-    print("Function Executing")
+    app.logger.info("Function Executing")
     if r.method == 'GET':
-        print ("GET request")
-        data = {"status": "success", "some key": "some value"}
-        return data, 200
+        app.logger.info("GET request")
+        return Flask.Response(status=200)
     if r.method == 'POST':
-        print ("POST request")
-        data = {"status": "success", "some key": "some value"}
-        return data, 200
+        app.logger.info("POST request")
+        return Flask.Response(status=200)
     
 #    print("Event Passed to Handler: " + json.dumps(event))
 #    emailbody = json.loads(event['body'])
